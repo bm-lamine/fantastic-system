@@ -1,0 +1,16 @@
+{
+  "name": "backend",
+  "private": true,
+  "scripts": {
+    "dev": "bun run --hot src/cmd/app.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "hono": "^4.11.1"
+  }
+}
