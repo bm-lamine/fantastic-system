@@ -8,6 +8,8 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(["development", "testing", "production"])
       .default("development"),
+    DATABASE_URL: z.url(),
+    REDIS_URL: z.url(),
   },
 
   /**
