@@ -1,3 +1,4 @@
+import { env } from "@/core/env";
 import { Hono } from "hono";
 import { etag } from "hono/etag";
 import { logger } from "hono/logger";
@@ -8,4 +9,7 @@ app.use(etag(), logger());
 
 app.get("/", (c) => c.text("Hono!"));
 
-export default app;
+export default {
+  fetch: app.fetch,
+  port: env.APP_PORT,
+};
