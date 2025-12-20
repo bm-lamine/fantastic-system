@@ -1,13 +1,17 @@
+import auth from "@/bin/auth/auth.handler";
+import users from "@/bin/users/users.handler";
 import { env } from "@/core/env";
-import { Hono } from "hono";
+import { createApp } from "@/core/utils";
+import { showRoutes } from "hono/dev";
 import { etag } from "hono/etag";
 import { logger } from "hono/logger";
 
-const app = new Hono();
+const app = createApp()
+  .use(etag(), logger())
+  .route("/", auth)
+  .route("/", users);
 
-app.use(etag(), logger());
-
-app.get("/", (c) => c.text("Hono!"));
+showRoutes(app);
 
 export default {
   fetch: app.fetch,

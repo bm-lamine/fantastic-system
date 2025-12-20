@@ -6,10 +6,12 @@ export const env = createEnv({
   server: {
     APP_PORT: z.coerce.number(),
     NODE_ENV: z
-      .enum(["development", "testing", "production"])
+      .enum(["development", "test", "production"])
       .default("development"),
     DATABASE_URL: z.url(),
     REDIS_URL: z.url(),
+    SMTP_HOST: z.string(),
+    SMTP_PORT: z.coerce.number(),
   },
 
   /**

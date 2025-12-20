@@ -7,21 +7,32 @@
     "db:migrate": "drizzle-kit migrate",
     "db:drop": "drizzle-kit drop",
     "db:push": "drizzle-kit push",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run"
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "drizzle-kit": "^0.31.8"
+    "@types/nodemailer": "^7.0.4",
+    "@vitest/ui": "^4.0.16",
+    "drizzle-kit": "^0.31.8",
+    "vite-tsconfig-paths": "^6.0.3",
+    "vitest": "^4.0.16"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
+    "@hono/event-emitter": "^2.0.0",
+    "@hono/zod-validator": "^0.7.6",
     "@t3-oss/env-core": "^0.13.10",
     "drizzle-orm": "^0.45.1",
+    "drizzle-zod": "^0.8.3",
     "hono": "^4.11.1",
     "ioredis": "^5.8.2",
     "nanoid": "^5.1.6",
+    "nodemailer": "^7.0.11",
     "postgres": "^3.4.7",
     "zod": "^4.2.1"
   }
