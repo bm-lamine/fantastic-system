@@ -7,6 +7,7 @@ import { etag } from "hono/etag";
 import { logger } from "hono/logger";
 
 const app = createApp()
+  .basePath("/api")
   .use(etag(), logger())
   .route("/", auth)
   .route("/", users);
